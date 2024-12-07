@@ -1,5 +1,3 @@
-const { iconsPlugin, getIconCollections } = require('@egoist/tailwindcss-icons')
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./index.html', './src/**/*.{vue,ts}'],
@@ -16,19 +14,13 @@ module.exports = {
         'gray-light-2': '#F3F3F3',
         'black-gray': '#101010',
         'green-logo': '#63D23A',
+        'telegram': '#039BE5',
+        'youtube': '#FF0002',
+        'vk': '#4A76A8'
       },
       fontFamily: {
         'roboto': ['Roboto', 'sans-serif']
       },
     },
-  },
-  plugins: [
-    require('@tailwindcss/aspect-ratio'),
-    require('@tailwindcss/typography'),
-    require('@tailwindcss/forms'),
-    iconsPlugin({
-      // Collections: https://icones.js.org/
-      collections: getIconCollections(['mdi']),
-    }),
-  ],
+  }
 }

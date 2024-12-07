@@ -9,6 +9,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     BreadCrumbs: typeof import('./src/components/BreadCrumbs.vue')['default']
     Favourites: typeof import('./src/components/Favourites.vue')['default']
+    HeaderLinkPopover: typeof import('./src/components/HeaderLinkPopover.vue')['default']
     PageNumber: typeof import('./src/components/PageNumber.vue')['default']
     PostCard: typeof import('./src/components/PostCard.vue')['default']
     PostTag: typeof import('./src/components/PostTag.vue')['default']

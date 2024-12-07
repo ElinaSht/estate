@@ -12,6 +12,8 @@ import ShoppingListPage from '@/pages/ShoppingListPage.vue'
 import ForumPage from '@/pages/ForumPage.vue'
 import SearchPage from '@/pages/SearchPage.vue'
 import ContactsPage from '@/pages/ContactsPage.vue'
+import StudyResourcesPage from '@/pages/StudyRecoursesPage.vue'
+import ResourcesPage from '@/pages/ResourcesPage.vue'
 
 const routes: RouteRecordRaw[] = [
   {
@@ -43,11 +45,27 @@ const routes: RouteRecordRaw[] = [
         }
       },
       {
-        path: 'study',
-        component: StudyPage,
+        path: 'studyResources',
+        component: StudyResourcesPage,
         meta: {
           title: 'Обучение и ресурсы'
-        }
+        },
+        children: [
+          {
+            path: 'study',
+            component: StudyPage,
+            meta: {
+              title: 'Обучение'
+            },
+          },
+          {
+            path: 'resources',
+            component: ResourcesPage,
+            meta: {
+              title: 'Ресурсы'
+            }
+          }
+        ]
       },
       {
         path: 'news',

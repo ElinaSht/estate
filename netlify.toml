@@ -1,0 +1,13 @@
+[build]
+command = "yarn build:mock"
+functions = "netlify/functions"
+publish = "dist"
+
+[build.environment]
+YARN_VERSION = "1.17.3"
+VITE_API_URL = "http://127.0.0.1:8888/api"
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200

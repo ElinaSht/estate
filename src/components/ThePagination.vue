@@ -6,47 +6,60 @@ const props = defineProps<{
 const current = defineModel<number>('current', { required: true })
 
 const visibleCount = 3
-const indexes = computed(() => Array.from({ length: props.total }, (v, index) => index + 1))
+const indexes = computed(() => Array.from({ length: props.total }, (v, index) => index))
 const visibleIndexes = computed(() => {
-  if (current.value - visibleCount < 0)
-    return indexes.value.slice(0, current.value + visibleCount)
-
-  else if (current.value + visibleCount > props.total )
-    return indexes.value.slice(current.value - visibleCount - 1, props.total)
-
-  else
-    return indexes.value.slice(Math.max(0, current.value - visibleCount), Math.min(current.value + visibleCount, props.total))
+  const from = Math.max(0, current.value - visibleCount + 1)
+  const to = Math.min(props.total - 1, current.value + visibleCount + 1)
+  return indexes.value.slice(from, to)
 })
-
-console.log(visibleIndexes.value.at(0))
-console.log(visibleIndexes.value)
 </script>
 
 <template>
   <div class="w-max mt-[52px] mx-auto flex items-center gap-5 sm:max-md:gap-3 max-sm:gap-1.5 max-sm:my-[32px]">
-    <div>
+    <a
+      href="#newsHeader"
+      class="w-[32px] h-[38px] flex items-center justify-center sm:max-md:w-[28] sm:max-md:h-[34] max-sm:w-[24] max-sm:h-[30]"
+      @click="current = 0"
+    >
       <img class="cursor-pointer max-sm:h-[10px]" alt="Begin" src="../assets/begin.svg" />
-    </div>
+    </a>
 
     <div class="flex gap-2 sm:max-md:gap-1 max-sm:gap-[1px]">
-      <template v-if="1 < visibleIndexes.at(0)!">
-        <PageNumber :page="1" :selected="current === 1" @click="current = 1"/>
-        <div class="self-end">...</div>
-      </template>
+      <PageNumber v-if="visibleIndexes.at(0)! > 0" :index="0" :selected="current === 1" @click="current = 1" />
+
+      <div
+        v-if="visibleIndexes.at(0)! > 1"
+        class="w-[32px] h-[38px] flex items-center justify-center sm:max-md:w-[28] sm:max-md:h-[34] max-sm:w-[24] max-sm:h-[30]"
+      >
+        ...
+      </div>
 
       <template v-for="index of visibleIndexes" :key="index">
-        <PageNumber :page="index" :selected="current === index" @click="current = index" />
+        <PageNumber :index="index" :selected="current === index" @click="current = index" />
       </template>
 
-      <template v-if="props.total > visibleIndexes.at(-1)!">
-        <div class="self-end">...</div>
-        <PageNumber :page="props.total" :selected="current === 11" @click="current = 11" />
-      </template>
+      <div
+        v-if="visibleIndexes.at(-1)! < props.total - 2"
+        class="w-[32px] h-[38px] flex items-center justify-center sm:max-md:w-[28] sm:max-md:h-[34] max-sm:w-[24] max-sm:h-[30]"
+      >
+        ...
+      </div>
+
+      <PageNumber
+        v-if="visibleIndexes.at(-1)! < props.total - 1"
+        :index="props.total - 1"
+        :selected="current === props.total - 1"
+        @click="current = props.total - 1"
+      />
     </div>
 
-    <div>
+    <a
+      href="#newsHeader"
+      class="w-[32px] h-[38px] flex items-center justify-center sm:max-md:w-[28] sm:max-md:h-[34] max-sm:w-[24] max-sm:h-[30]"
+      @click="current = total"
+    >
       <img class="cursor-pointer max-sm:h-[10px]" alt="End" src="../assets/end.svg" />
-    </div>
+    </a>
   </div>
 </template>
 

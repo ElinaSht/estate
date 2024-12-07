@@ -11,7 +11,7 @@ watch(route, () => showed.value = false)
       class="relative"
       @click="showed = !showed"
     >
-      <img class="cursor-pointer hover:scale-105 lg:max-xl:w-[30px] md:max-lg:w-[20px] max-md:w-[18px]" alt="Menu" src="../assets/sandwich.svg" />
+      <img class="cursor-pointer hover:scale-105 lg:max-xl:w-[30px] md:max-lg:w-[20px] max-md:w-[18px] transition" alt="Menu" src="../assets/sandwich.svg" />
     </div>
 
     <SideModal v-model:showed="showed" class="sm:hidden">
@@ -23,15 +23,15 @@ watch(route, () => showed.value = false)
         <div class="h-[1px] w-full bg-gray-dark-3" />
 
         <div class="flex gap-[32px] items-center text-white text-[10px] font-bold sm:max-md:text-[12px] md:text-[14px]">
-          <RouterLink to="forum">
+          <RouterLink to="/forum" active-class="text-green-logo">
             <div class="link">Форум</div>
           </RouterLink>
 
-          <RouterLink to="search">
+          <RouterLink to="/search" active-class="text-green-logo">
             <div class="link">Поиск</div>
           </RouterLink>
 
-          <RouterLink to="contacts">
+          <RouterLink to="/contacts" active-class="text-green-logo">
             <div class="link">Контакты</div>
           </RouterLink>
         </div>
@@ -39,26 +39,25 @@ watch(route, () => showed.value = false)
         <div class="h-[1px] w-full bg-gray-dark-3" />
 
         <div class="flex flex-col gap-4 items-center text-[12px] font-bold sm:max-md:text-[14px] md:text-[16px]">
-          <RouterLink to="elcorestore">
+          <RouterLink to="/elcorestore" active-class="text-green-logo">
             <div class="link">ElcoreStore</div>
           </RouterLink>
 
-          <RouterLink to="elcorecloud">
+          <RouterLink to="/elcorecloud" active-class="text-green-logo">
             <div class="link">ElcoreCloud</div>
           </RouterLink>
 
-          <RouterLink to="elcoreide">
+          <RouterLink to="/elcoreide" active-class="text-green-logo">
             <div class="link">ElcoreIDE</div>
           </RouterLink>
 
-          <RouterLink to="study">
+          <RouterLink to="/studyResources" active-class="text-green-logo">
             <div class="flex gap-2 items-center link">
               <div>Обучение и ресурсы</div>
-              <img class="w-[10px]" alt="Menu" src="../assets/menu.svg" />
             </div>
           </RouterLink>
 
-          <RouterLink to="news">
+          <RouterLink to="/news" active-class="text-green-logo">
             <div class="link">Новости и статьи</div>
           </RouterLink>
         </div>

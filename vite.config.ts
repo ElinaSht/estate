@@ -4,24 +4,24 @@ import { fileURLToPath, URL } from 'node:url'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { defineConfig } from 'vite'
-import PackageJson from './package.json' with { type: 'json' }
+import svgLoader from 'vite-svg-loader'
 
-process.env.VITE_APP_VERSION = PackageJson.version
-if (process.env.NODE_ENV === 'production') {
-  process.env.VITE_APP_BUILD_EPOCH = new Date().getTime().toString()
-}
 
 export default defineConfig({
   plugins: [
     vue(),
+    svgLoader({
+      defaultImport: 'component',
+      svgoConfig: {
+        plugins: [
+          { name: 'preset-default', params: { overrides: { removeViewBox: false }} }
+        ]
+      }
+    }),
     AutoImport({
       imports: [
         'vue',
         'vue-router',
-        'pinia',
-        {
-          '@/store': ['useStore'],
-        },
         unheadVueComposablesImports,
       ],
       dts: 'auto-imports.d.ts',

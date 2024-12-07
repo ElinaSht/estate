@@ -2,5 +2,7 @@
 </script>
 
 <template>
-  <RouterView/>
+  <div class="size-fit min-w-full">
+    <RouterView />
+  </div>
 </template>
