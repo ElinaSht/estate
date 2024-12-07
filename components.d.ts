@@ -8,17 +8,14 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     BreadCrumbs: typeof import('./src/components/BreadCrumbs.vue')['default']
-    Favourites: typeof import('./src/components/Favourites.vue')['default']
     HeaderLinkPopover: typeof import('./src/components/HeaderLinkPopover.vue')['default']
     PageNumber: typeof import('./src/components/PageNumber.vue')['default']
     PostCard: typeof import('./src/components/PostCard.vue')['default']
     PostTag: typeof import('./src/components/PostTag.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    ShoppingList: typeof import('./src/components/ShoppingList.vue')['default']
     SideModal: typeof import('./src/components/SideModal.vue')['default']
     SocialNetwork: typeof import('./src/components/SocialNetwork.vue')['default']
-    TheFavourite: typeof import('@/components/Favourites.vue')['default']
     TheFooter: typeof import('./src/components/TheFooter.vue')['default']
     TheHeader: typeof import('./src/components/TheHeader.vue')['default']
     ThePagination: typeof import('./src/components/ThePagination.vue')['default']
