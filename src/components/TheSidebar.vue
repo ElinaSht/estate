@@ -11,12 +11,12 @@ watch(route, () => showed.value = false)
       class="relative"
       @click="showed = !showed"
     >
-      <img class="cursor-pointer hover:scale-105 lg:max-xl:w-[30px] md:max-lg:w-[20px] max-md:w-[18px] transition" alt="Menu" src="../assets/sandwich.svg" />
+      <img class="cursor-pointer hover:scale-105 lg:max-xl:w-[30px] md:max-lg:w-[20px] max-md:w-[18px] transition" alt="Menu" src="../assets/sandwich.svg?url" />
     </div>
 
     <SideModal v-model:showed="showed" class="sm:hidden">
       <div class="p-[20px] flex flex-col gap-6 items-center rounded md:gap-8">
-        <img alt="ElcorePLC" src="../assets/logo.svg" class="w-[120px] sm:max-md:w-[160px] md:w-[180px]" />
+        <img alt="ElcorePLC" src="../assets/logo.svg?url" class="w-[120px] sm:max-md:w-[160px] md:w-[180px]" />
 
         <SocialNetwork />
 

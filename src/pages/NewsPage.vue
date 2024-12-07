@@ -16,7 +16,7 @@ const pageAmount = computed(() => Math.ceil(filteredPosts.value.length / pageSiz
 
 function setFilter(post?: PostType) {
   filter.value = post
-  pageIndex.value = 1
+  pageIndex.value = 0
 }
 </script>
 <template>

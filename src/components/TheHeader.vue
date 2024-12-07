@@ -42,7 +42,7 @@ import IconShoppingCart from '../assets/shopping-cart.svg'
     <div class="bg-black-gray w-full h-[103px] flex max-sm:h-[80px]">
       <div class="max-w-[1304px] mx-auto px-4 flex-1 flex justify-between items-center text-white">
         <RouterLink to="/">
-            <img alt="ElcorePLC" src="../assets/logo.svg" class="lg:max-xl:w-[170px] md:max-lg:w-[140px] sm:max-md:w-[100px] max-sm:w-[150px] pointer-events-none" />
+            <img alt="ElcorePLC" src="../assets/logo.svg?url" class="lg:max-xl:w-[170px] md:max-lg:w-[140px] sm:max-md:w-[100px] max-sm:w-[150px] pointer-events-none" />
         </RouterLink>
 
         <div class="flex gap-10 items-center text-[18px] font-bold lg:max-xl:gap-6 md:max-lg:text-[14px] md:max-lg:gap-3 sm:max-md:text-[12px] sm:max-md:gap-2 max-sm:hidden">

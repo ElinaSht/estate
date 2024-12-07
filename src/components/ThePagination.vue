@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import IconBegin from '../assets/begin.svg'
+import IconEnd from '../assets/end.svg'
+
 const props = defineProps<{
   total: number
 }>()
@@ -8,7 +11,7 @@ const current = defineModel<number>('current', { required: true })
 const visibleCount = 3
 const indexes = computed(() => Array.from({ length: props.total }, (v, index) => index))
 const visibleIndexes = computed(() => {
-  const from = Math.max(0, current.value - visibleCount + 1)
+  const from = Math.max(0, current.value - visibleCount)
   const to = Math.min(props.total - 1, current.value + visibleCount + 1)
   return indexes.value.slice(from, to)
 })
@@ -18,10 +21,10 @@ const visibleIndexes = computed(() => {
   <div class="w-max mt-[52px] mx-auto flex items-center gap-5 sm:max-md:gap-3 max-sm:gap-1.5 max-sm:my-[32px]">
     <a
       href="#newsHeader"
-      class="w-[32px] h-[38px] flex items-center justify-center sm:max-md:w-[28] sm:max-md:h-[34] max-sm:w-[24] max-sm:h-[30]"
+      class="w-[32px] h-[38px] flex items-center justify-center sm:max-md:w-[28] sm:max-md:h-[34] max-sm:w-[24] max-sm:h-[30] cursor-pointer text-black-gray transition hover:text-green-links"
       @click="current = 0"
     >
-      <img class="cursor-pointer max-sm:h-[10px]" alt="Begin" src="../assets/begin.svg" />
+      <IconBegin class="max-sm:h-[10px]"/>
     </a>
 
     <div class="flex gap-2 sm:max-md:gap-1 max-sm:gap-[1px]">
@@ -55,10 +58,10 @@ const visibleIndexes = computed(() => {
 
     <a
       href="#newsHeader"
-      class="w-[32px] h-[38px] flex items-center justify-center sm:max-md:w-[28] sm:max-md:h-[34] max-sm:w-[24] max-sm:h-[30]"
-      @click="current = total"
+      class="w-[32px] h-[38px] flex items-center justify-center sm:max-md:w-[28] sm:max-md:h-[34] max-sm:w-[24] max-sm:h-[30] cursor-pointer text-black-gray transition hover:text-green-links"
+      @click="current = props.total - 1"
     >
-      <img class="cursor-pointer max-sm:h-[10px]" alt="End" src="../assets/end.svg" />
+      <IconEnd class="max-sm:h-[10px]" />
     </a>
   </div>
 </template>
