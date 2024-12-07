@@ -13,7 +13,7 @@
           <div class="mt-[28px] mb-[13px] text-[18px] font-bold md:max-lg:text-[16px] max-md:text-[14px] max-sm:my-[13px] max-sm:text-center">Платформа для автоматизации ваших процессов</div>
 
           <div
-            class="w-[155px] h-[46px] border-[1px] flex gap-2.5 border-gray-dark-4 rounded cursor-pointer
+            class="w-[155px] min-h-[46px] border-[1px] flex gap-2.5 border-gray-dark-4 rounded cursor-pointer
                    hover:scale-110 transition sm:max-md:w-[120px] max-sm:self-center max-sm:w-[200px] max-sm:justify-center max-sm:hover:scale-100"
           >
             <img class="ml-[11px] max-sm:ml-0" alt="Download" src="../assets/download.svg?url" />
