@@ -1,18 +1,12 @@
 <script setup lang="ts">
-import type { Slot } from 'vue'
 
 const showed = defineModel<boolean>('showed', { required: true })
-
-defineSlots<{
-  default?: Slot
-}>()
 </script>
 
 <template>
-  <div>
     <div
       class="fixed z-10 inset-0 overflow-hidden transition"
-      :class="showed ? 'bg-gray-light-4/90' : 'bg-transparent pointer-events-none'"
+      :class="showed ? 'bg-gray-dark-3/90' : 'bg-transparent pointer-events-none'"
       @click.self="showed = false"
     >
       <Transition
@@ -29,6 +23,4 @@ defineSlots<{
         </div>
       </Transition>
     </div>
-
-  </div>
 </template>

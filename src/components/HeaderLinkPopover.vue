@@ -40,7 +40,7 @@ const pages = [
         class="absolute w-full py-4 flex flex-col gap-1 bg-black-gray-text rounded-md text-[14px] text-white shadow-sm shadow-black max-md:text-[10px]"
       >
         <RouterLink v-for="(page, index) of pages" :key="index" :to="page.link" active-class="text-green-logo">
-          <div class="hover:bg-black-gray px-4 py-2 cursor-pointer transition">{{ page.label }}</div>
+          <div class="link hover:bg-black-gray px-4 py-2">{{ page.label }}</div>
         </RouterLink>
       </div>
     </Transition>

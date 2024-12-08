@@ -27,21 +27,27 @@ import IconShoppingCart from '../assets/shopping-cart.svg'
 
         <div class="flex gap-[30px] items-center text-white md:max-lg:gap-[20px] max-md:gap-[16px] max-sm:ml-auto">
           <RouterLink to="/favourites" active-class="text-green-logo">
-            <IconFavourites class="size-6 cursor-pointer hover:scale-110 transition max-md:size-4" />
+            <IconFavourites class="icon size-6 max-md:size-4" />
           </RouterLink>
 
           <RouterLink to="/shoppingList" active-class="text-green-logo">
-            <IconShoppingCart class="size-6 cursor-pointer hover:scale-110 transition max-md:size-4"/>
+            <IconShoppingCart class="icon size-6 max-md:size-4"/>
           </RouterLink>
 
-          <button class="h-7 px-3.5 rounded bg-green-links border-green-links text-white text-[14px] hover:bg-green-logo/50 transition">Личный кабинет</button>
+          <button
+            class="h-7 px-3.5 rounded bg-green-links border-green-links text-white text-[14px] transition
+                   sm:hover:bg-green-logo/40 sm:hover:shadow-xl sm:hover:shadow-black-gray
+                   active:scale-95"
+          >
+            Личный кабинет
+          </button>
         </div>
       </div>
     </div>
 
     <div class="bg-black-gray w-full h-[103px] flex max-sm:h-[80px]">
       <div class="max-w-[1304px] mx-auto px-4 flex-1 flex justify-between items-center text-white">
-        <RouterLink to="/">
+        <RouterLink to="/" class="transition active:scale-95">
             <img alt="ElcorePLC" src="../assets/logo.svg?url" class="lg:max-xl:w-[170px] md:max-lg:w-[140px] sm:max-md:w-[100px] max-sm:w-[150px] pointer-events-none" />
         </RouterLink>
 

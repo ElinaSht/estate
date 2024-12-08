@@ -9,7 +9,7 @@ const props = defineProps<{
 const current = defineModel<number>('current', { required: true })
 
 const visibleCount = 3
-const indexes = computed(() => Array.from({ length: props.total }, (v, index) => index))
+const indexes = computed(() => Array.from({ length: props.total }, (value, index) => index))
 const visibleIndexes = computed(() => {
   const from = Math.max(0, current.value - visibleCount)
   const to = Math.min(props.total - 1, current.value + visibleCount + 1)

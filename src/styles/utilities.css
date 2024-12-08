@@ -1,6 +1,10 @@
 @layer utilities {
     .link {
-        @apply cursor-pointer hover:text-green-logo transition;
+        @apply cursor-pointer sm:hover:text-green-logo sm:active:text-green-logo/60 max-sm:active:text-green-logo/60 transition;
+    }
+
+    .icon {
+        @apply cursor-pointer sm:hover:text-green-logo sm:active:text-green-logo/60 max-sm:active:text-green-logo/60 active:scale-95 transition;
     }
 }
 

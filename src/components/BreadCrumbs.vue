@@ -11,7 +11,12 @@ const path = computed(() => route.matched)
         <div v-if="index" class="text-gray-light-4">/</div>
 
         <RouterLink :to="segment.path">
-          <div :class="index < (path.length - 1) ? 'text-gray-light-4' : 'text-white'">{{ segment.meta.title }}</div>
+          <div
+            class="link"
+            :class="index < (path.length - 1) ? 'text-gray-light-4' : 'text-white'"
+          >
+            {{ segment.meta.title }}
+          </div>
         </RouterLink>
       </template>
     </div>
