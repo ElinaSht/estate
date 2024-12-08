@@ -20,7 +20,12 @@ const pages = [
 </script>
 
 <template>
-  <div class="relative cursor-pointer" @mouseenter="open = true" @mouseleave="open = false">
+  <div
+    class="relative cursor-pointer"
+    @mouseenter="open = true"
+    @mouseleave="open = false"
+    @touchstart.passive="() => {}"
+  >
     <div class="flex gap-2 py-4 items-center sm:max-md:gap-0.5">
       <slot name="default" />
       <IconMenu
@@ -40,7 +45,7 @@ const pages = [
         class="absolute w-full py-4 flex flex-col gap-1 bg-black-gray-text rounded-md text-[14px] text-white shadow-sm shadow-black max-md:text-[10px]"
       >
         <RouterLink v-for="(page, index) of pages" :key="index" :to="page.link" active-class="text-green-logo">
-          <div class="link hover:bg-black-gray px-4 py-2">{{ page.label }}</div>
+          <div class="link hover:bg-black-gray px-4 py-2" @touchstart.passive="() => {}">{{ page.label }}</div>
         </RouterLink>
       </div>
     </Transition>

@@ -9,16 +9,16 @@ const props = defineProps<{
 
 <template>
   <div
-    class="w-1/3 max-sm:w-full bg-white rounded-xl transition
-           sm:hover:scale-105 sm:hover:shadow-xl sm:hover:shadow-gray-dark-1 sm:active:scale-100 max-sm:active:scale-95
-           px-[7px] py-[14px]"
+    class="w-1/3 max-sm:w-full bg-white rounded-xl p-[7px] transition duration-300 active:duration-200
+           sm:hover:bg-gray-light-2/40 active:scale-[0.97] will-change-transform"
+    @touchstart.passive="() => {}"
   >
     <div
       class="h-full flex flex-col gap-[10px] cursor-pointer
              md:max-lg:gap-1.5 max-md:gap-1"
     >
       <div class="w-full flex justify-center">
-        <img alt="Empty image" src="../assets/empty-image.png"/>
+        <img alt="Empty image" src="../assets/empty-image.png" class="pointer-events-none"/>
       </div>
 
       <div

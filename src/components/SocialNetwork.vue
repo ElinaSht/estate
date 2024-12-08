@@ -41,6 +41,7 @@ const icons: LinkItem[] = [
         :is="item.component"
         :class="item.color"
         class="icon max-md:w-[16px] w-5"
+        @touchstart.passive="() => {}"
       />
     </a>
   </div>

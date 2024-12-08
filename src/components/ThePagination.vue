@@ -21,10 +21,12 @@ const visibleIndexes = computed(() => {
   <div class="w-max mt-[52px] mx-auto flex items-center gap-5 sm:max-md:gap-3 max-sm:gap-1.5 max-sm:my-[32px]">
     <a
       href="#newsHeader"
-      class="w-[32px] h-[38px] flex items-center justify-center sm:max-md:w-[28] sm:max-md:h-[34] max-sm:w-[24] max-sm:h-[30] cursor-pointer text-black-gray transition hover:text-green-links"
-      @click="current = 0"
+      class="icon w-[32px] h-[38px] flex sm:max-md:w-[28px] sm:max-md:h-[34px] max-sm:w-[24px] max-sm:h-[30px] cursor-pointer text-black-gray transition sm:hover:text-green-links"
+      @click="current = 1"
     >
-      <IconBegin class="max-sm:h-[10px]"/>
+      <div class="size-full flex justify-center items-center active:scale-95" @touchstart.passive="() => {}">
+        <IconBegin class="max-sm:h-[10px]" />
+      </div>
     </a>
 
     <div class="flex gap-2 sm:max-md:gap-1 max-sm:gap-[1px]">
@@ -32,7 +34,7 @@ const visibleIndexes = computed(() => {
 
       <div
         v-if="visibleIndexes.at(0)! > 1"
-        class="w-[32px] h-[38px] flex items-center justify-center sm:max-md:w-[28] sm:max-md:h-[34] max-sm:w-[24] max-sm:h-[30]"
+        class="w-[32px] h-[38px] flex items-center justify-center sm:max-md:w-[28px] sm:max-md:h-[34px] max-sm:w-[24px] max-sm:h-[30px]"
       >
         ...
       </div>
@@ -43,7 +45,7 @@ const visibleIndexes = computed(() => {
 
       <div
         v-if="visibleIndexes.at(-1)! < props.total - 2"
-        class="w-[32px] h-[38px] flex items-center justify-center sm:max-md:w-[28] sm:max-md:h-[34] max-sm:w-[24] max-sm:h-[30]"
+        class="w-[32px] h-[38px] flex items-center justify-center sm:max-md:w-[28px] sm:max-md:h-[34px] max-sm:w-[24px] max-sm:h-[30px]"
       >
         ...
       </div>
@@ -58,10 +60,12 @@ const visibleIndexes = computed(() => {
 
     <a
       href="#newsHeader"
-      class="w-[32px] h-[38px] flex items-center justify-center sm:max-md:w-[28] sm:max-md:h-[34] max-sm:w-[24] max-sm:h-[30] cursor-pointer text-black-gray transition hover:text-green-links"
+      class="w-[32px] h-[38px] flex items-center justify-center sm:max-md:w-[28px] sm:max-md:h-[34px] max-sm:w-[24px] max-sm:h-[30px] cursor-pointer text-black-gray transition sm:hover:text-green-links"
       @click="current = props.total - 1"
     >
-      <IconEnd class="max-sm:h-[10px]" />
+      <div class="size-full flex justify-center items-center active:scale-95" @touchstart.passive="() => {}">
+        <IconEnd class="max-sm:h-[10px]" />
+      </div>
     </a>
   </div>
 </template>

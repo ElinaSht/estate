@@ -14,6 +14,7 @@ const path = computed(() => route.matched)
           <div
             class="link"
             :class="index < (path.length - 1) ? 'text-gray-light-4' : 'text-white'"
+            @touchstart.passive="() => {}"
           >
             {{ segment.meta.title }}
           </div>
