@@ -70,10 +70,10 @@
             </button>
 
             <div class="flex flex-col gap-[18px] text-[18px] md:max-lg:text-[14px] max-md:gap-[8px] sm:max-md:text-[12px] max-sm:text-[10px] max-sm:items-center">
-              <div class="link">Контакты</div>
-              <div class="link">Новости и статьи</div>
-              <div class="link">Сообщество (Форум)</div>
-              <div class="link">Тех поддержка</div>
+              <div class="link" @touchstart.passive="() => {}">Контакты</div>
+              <div class="link" @touchstart.passive="() => {}">Новости и статьи</div>
+              <div class="link" @touchstart.passive="() => {}">Сообщество (Форум)</div>
+              <div class="link" @touchstart.passive="() => {}">Тех поддержка</div>
             </div>
           </div>
         </div>
@@ -84,8 +84,8 @@
       <SocialNetwork />
 
       <div class="flex gap-[22px] text-gray-dark-1 sm:max-lg:text-[14px] max-sm:text-[10px] max-sm:flex-col max-sm:gap-[6px] max-sm:items-center">
-        <div class="link">Политика конфиденциальности</div>
-        <div class="link">Карта сайта</div>
+        <div class="link" @touchstart.passive="() => {}">Политика конфиденциальности</div>
+        <div class="link" @touchstart.passive="() => {}">Карта сайта</div>
       </div>
 
     </div>
