@@ -13,6 +13,7 @@ const props = defineProps<{
     @touchstart.passive="() => {}"
   >
     <a
+      href="#newsHeader"
       class="size-full flex justify-center items-center rounded text-[20px] transition sm:max-md:text-[16px] max-sm:text-[12px]"
       :class="props.selected && 'text-white'"
     >
