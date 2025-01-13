@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory, RouterView } from 'vue-router'
 import type { RouteRecordRaw } from 'vue-router'
 
 import NewsPage from '@/pages/NewsPage.vue'
@@ -14,15 +14,22 @@ import SearchPage from '@/pages/SearchPage.vue'
 import ContactsPage from '@/pages/ContactsPage.vue'
 import StudyResourcesPage from '@/pages/StudyRecoursesPage.vue'
 import ResourcesPage from '@/pages/ResourcesPage.vue'
+import ArticlePage from '@/pages/ArticlePage.vue'
+import NewsArticlesPage from '@/pages/NewsArticlesPage.vue'
+import { PostType } from '@/types/post-type.ts'
 
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    component: HomePage,
+    component: RouterView,
     meta: {
-      title: 'Главная',
+      title: 'Главная'
     },
     children: [
+      {
+        path: '',
+        component: HomePage,
+      },
       {
         path: 'elcorestore',
         component: ElcoreStorePage,
@@ -46,12 +53,15 @@ const routes: RouteRecordRaw[] = [
       },
       {
         path: 'studyResources',
-        component: StudyResourcesPage,
+        component: RouterView,
         meta: {
           title: 'Обучение и ресурсы'
         },
         children: [
           {
+            path: '',
+            component: StudyResourcesPage,
+          },{
             path: 'study',
             component: StudyPage,
             meta: {
@@ -68,11 +78,35 @@ const routes: RouteRecordRaw[] = [
         ]
       },
       {
-        path: 'news',
-        component: NewsPage,
+        path: 'newsArticles',
+        component: RouterView,
         meta: {
           title: 'Новости и статьи'
-        }
+        },
+        children: [
+          {
+            path: '',
+            component: NewsArticlesPage
+          },
+          {
+            name: 'news',
+            path: 'news/:id',
+            component: NewsPage,
+            meta: {
+              title: 'Новость'
+            },
+            props: ({params}) => params,
+          },
+          {
+            name: 'article',
+            path: 'article/:id',
+            component: ArticlePage,
+            meta: {
+              title: 'Статья'
+            },
+            props: ({params}) => params,
+          }
+        ]
       },
     ]
   },

@@ -22,7 +22,7 @@ const visibleIndexes = computed(() => {
     <a
       href="#newsHeader"
       class="icon w-[32px] h-[38px] flex sm:max-md:w-[28px] sm:max-md:h-[34px] max-sm:w-[24px] max-sm:h-[30px] cursor-pointer text-black-gray transition sm:hover:text-green-links"
-      @click="current = 1"
+      @click="current = 0"
     >
       <div class="size-full flex justify-center items-center active:scale-95" @touchstart.passive="() => {}">
         <IconBegin class="max-sm:h-[10px]" />

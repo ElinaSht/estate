@@ -1,7 +1,9 @@
 <script setup lang="ts">
+import * as _ from 'lodash-es'
+
 const route = useRoute()
 
-const path = computed(() => route.matched)
+const path = computed(() => route.matched.filter(route => !_.isEmpty(route.meta)))
 </script>
 
 <template>
@@ -13,7 +15,7 @@ const path = computed(() => route.matched)
         <RouterLink :to="segment.path">
           <div
             class="link"
-            :class="index < (path.length - 1) ? 'text-gray-light-4' : 'text-white'"
+            :class="index < path.length - 1 ? 'text-gray-light-4' : 'text-white'"
             @touchstart.passive="() => {}"
           >
             {{ segment.meta.title }}

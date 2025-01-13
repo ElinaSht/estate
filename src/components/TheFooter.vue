@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import StringLink from '@/components/StringLink.vue'
 </script>
 
 <template>
@@ -31,18 +32,9 @@
             <div class="text-gray-dark-3 font-bold text-[24px] md:max-lg:text-[18px] max-md:text-[16px]">Платформа</div>
 
             <div class="flex flex-col gap-[18px] text-[18px] md:max-lg:text-[14px] max-md:gap-[8px] max-md:text-[12px] max-sm:items-center">
-                <RouterLink to="/elcorestore">
-                  <div class="link" @touchstart.passive="() => {}">ElcoreStore</div>
-                </RouterLink>
-
-                <RouterLink to="/elcorecloud">
-                  <div class="link" @touchstart.passive="() => {}">ElcoreCloud</div>
-                </RouterLink>
-
-              <RouterLink to="/elcoreide">
-                <div class="link" @touchstart.passive="() => {}">ElcoreIDE</div>
-              </RouterLink>
-
+              <StringLink to="/elcorestore" label="ElcoreStore"/>
+              <StringLink to="/elcorecloud" label="ElcoreCloud"/>
+              <StringLink to="/elcoreide" label="ElcoreIDE"/>
             </div>
           </div>
 
@@ -50,11 +42,12 @@
             <div class="text-gray-dark-3 font-bold text-[24px] md:max-lg:text-[18px] max-md:text-[16px] max-sm:self-center">Обучение и ресурсы</div>
 
             <div class="flex flex-col gap-[18px] text-[18px] md:max-lg:text-[14px] max-md:gap-[8px] max-md:text-[12px] max-sm:items-center">
-              <div class="link" @touchstart.passive="() => {}">Что такое ElcorePLC</div>
-              <div class="link" @touchstart.passive="() => {}">Документация</div>
-              <div class="link" @touchstart.passive="() => {}">Обучающие материалы</div>
-              <div class="link" @touchstart.passive="() => {}">Примеры использования</div>
-              <div class="link" @touchstart.passive="() => {}">База знаний</div>
+
+              <StringLink label="Что такое ElcorePLC"/>
+              <StringLink label="Документация"/>
+              <StringLink label="Обучающие материалы"/>
+              <StringLink label="Примеры использования"/>
+              <StringLink label="База знаний"/>
             </div>
           </div>
 
@@ -70,10 +63,10 @@
             </button>
 
             <div class="flex flex-col gap-[18px] text-[18px] md:max-lg:text-[14px] max-md:gap-[8px] sm:max-md:text-[12px] max-sm:text-[10px] max-sm:items-center">
-              <div class="link" @touchstart.passive="() => {}">Контакты</div>
-              <div class="link" @touchstart.passive="() => {}">Новости и статьи</div>
-              <div class="link" @touchstart.passive="() => {}">Сообщество (Форум)</div>
-              <div class="link" @touchstart.passive="() => {}">Тех поддержка</div>
+              <StringLink label="Контакты"/>
+              <StringLink label="Новости и статьи"/>
+              <StringLink label="Сообщество (Форум)"/>
+              <StringLink label="Тех поддержка"/>
             </div>
           </div>
         </div>
@@ -84,8 +77,8 @@
       <SocialNetwork />
 
       <div class="flex gap-[22px] text-gray-dark-1 sm:max-lg:text-[14px] max-sm:text-[10px] max-sm:flex-col max-sm:gap-[6px] max-sm:items-center">
-        <div class="link" @touchstart.passive="() => {}">Политика конфиденциальности</div>
-        <div class="link" @touchstart.passive="() => {}">Карта сайта</div>
+        <StringLink label="Политика конфиденциальности"/>
+        <StringLink label="Карта сайта"/>
       </div>
 
     </div>

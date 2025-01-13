@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <div class="size-fit min-w-full">
-    <RouterView />
+  <div class="page-header">
+    Главная
   </div>
 </template>

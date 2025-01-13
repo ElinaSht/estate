@@ -9,6 +9,9 @@ declare module 'vue' {
   export interface GlobalComponents {
     BreadCrumbs: typeof import('./src/components/BreadCrumbs.vue')['default']
     HeaderLinkPopover: typeof import('./src/components/HeaderLinkPopover.vue')['default']
+    IconLink: typeof import('./src/components/IconLink.vue')['default']
+    Link: typeof import('./src/components/Link.vue')['default']
+    LinkString: typeof import('@/components/StringLink.vue')['default']
     PageNumber: typeof import('./src/components/PageNumber.vue')['default']
     PostCard: typeof import('./src/components/PostCard.vue')['default']
     PostTag: typeof import('./src/components/PostTag.vue')['default']
@@ -16,8 +19,10 @@ declare module 'vue' {
     RouterView: typeof import('vue-router')['RouterView']
     SideModal: typeof import('./src/components/SideModal.vue')['default']
     SocialNetwork: typeof import('./src/components/SocialNetwork.vue')['default']
+    StringLink: typeof import('./src/components/StringLink.vue')['default']
     TheFooter: typeof import('./src/components/TheFooter.vue')['default']
     TheHeader: typeof import('./src/components/TheHeader.vue')['default']
+    TheLink: typeof import('./src/components/TheLink.vue')['default']
     ThePagination: typeof import('./src/components/ThePagination.vue')['default']
     TheSidebar: typeof import('./src/components/TheSidebar.vue')['default']
   }

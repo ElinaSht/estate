@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 const showed = defineModel<boolean>('showed', { required: true })
 </script>
 
