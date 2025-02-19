@@ -35,7 +35,7 @@ const opened = defineModel<boolean>('opened', { required: true })
 
     <TheSideMenu
       :opened
-      class="fixed left-0 top-full w-full h-[calc(100dvh-100px)] max-sm:h-[calc(100dvh-76px)] transition md:opacity-0 md:pointer-events-none"
+      class="fixed left-0 top-[100px] max-sm:top-[76px] w-full h-[calc(100dvh-100px)] max-sm:h-[calc(100dvh-76px)] transition md:opacity-0 md:pointer-events-none"
     />
   </div>
 </template>

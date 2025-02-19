@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
-import IntroButton from '@/components/IntroButton.vue'
+import IntroButton from '@/components/TheIntroButton.vue'
+import TheIntroButton from '@/components/TheIntroButton.vue'
 
 const breakpoints = useBreakpoints(breakpointsTailwind)
 const sm = breakpoints.smaller('sm')
@@ -18,7 +19,7 @@ const imageLoaded = ref<boolean>(false)
 </script>
 
 <template>
-  <div class="relative rounded-[26px] overflow-hidden max-sm:h-[960px] bg-spm-gray">
+  <div class="relative isolate rounded-[26px] overflow-hidden max-sm:h-[960px] bg-spm-gray">
     <img
       :src="bgImage"
       alt="Estate"
@@ -52,7 +53,7 @@ const imageLoaded = ref<boolean>(false)
         <div
           class="flex mt-auto gap-[51px] max-lg:gap-[20px] items-center max-sm:flex-1 max-sm:flex-col max-sm:mt-[24px]"
         >
-          <IntroButton />
+          <TheIntroButton />
 
           <div class="flex flex-1 max-sm:flex-row-reverse max-sm:flex-none max-sm:w-full max-sm:mt-auto">
             <div class="flex gap-[14px] items-center max-820:ml-auto">

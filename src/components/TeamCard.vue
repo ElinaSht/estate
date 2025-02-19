@@ -20,8 +20,9 @@ const imageLoaded = ref<boolean>(false)
       <img
         :src="props.member.image"
         :alt="props.member.name"
-        class="size-full object-cover object-center will-change-transform hover:scale-110 transition duration-500"
+        class="size-full object-cover object-center will-change-transform sm:hover:scale-110 max-sm:active:scale-110 transition duration-500"
         :class="!imageLoaded && 'opacity-0 '"
+        @touchstart.passive="() => {}"
         @load="imageLoaded = true"
       />
     </div>

@@ -18,6 +18,7 @@ const opened = computed(() => props.sublinks && hovered.value)
       href="#"
       class="w-full relative flex gap-[6px] items-center cursor-pointer sm:hover:text-spm-blue-light sm:active:text-spm-blue max-sm:active:text-spm-blue-light transition"
       :class="!props.thin && 'py-[8px]'"
+      @touchstart.passive="() => {}"
     >
       <span class="flex-1" :class="props.static && 'font-merriweather text-[30px]'">
         {{ props.text }}

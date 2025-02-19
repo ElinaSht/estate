@@ -17,6 +17,7 @@ declare module 'vue' {
     TheFooter: typeof import('./src/components/TheFooter.vue')['default']
     TheFooterLinks: typeof import('./src/components/TheFooterLinks.vue')['default']
     TheHeader: typeof import('./src/components/TheHeader.vue')['default']
+    TheIntroButton: typeof import('./src/components/TheIntroButton.vue')['default']
     TheIntroFrame: typeof import('./src/components/TheIntroFrame.vue')['default']
     TheMenu: typeof import('./src/components/TheMenu.vue')['default']
     TheSideMenu: typeof import('./src/components/TheSideMenu.vue')['default']
