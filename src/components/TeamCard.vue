@@ -4,6 +4,8 @@ import type { TeamMember } from '@/types/team-member.ts'
 const props = defineProps<{
   member: TeamMember
 }>()
+
+const imageLoaded = ref<boolean>(false)
 </script>
 
 <template>
@@ -14,11 +16,13 @@ const props = defineProps<{
       <SocialButton v-for="item of props.member.social" :key="item" :size="22" :type="item" :fill="false" />
     </div>
 
-    <div class="overflow-hidden w-full max-md:h-[260px]">
+    <div class="overflow-hidden max-w-[290px] max-sm:max-w-full max-md:h-[260px] bg-spm-gray">
       <img
         :src="props.member.image"
         :alt="props.member.name"
-        class="size-full object-cover object-center will-change-transform hover:scale-110 transition"
+        class="size-full object-cover object-center will-change-transform hover:scale-110 transition duration-500"
+        :class="!imageLoaded && 'opacity-0 '"
+        @load="imageLoaded = true"
       />
     </div>
 

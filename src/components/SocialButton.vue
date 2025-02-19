@@ -20,13 +20,13 @@ const icon = {
 </script>
 
 <template>
-  <div
-    class="flex items-center cursor-pointer transition text-white hover:scale-110"
+  <button
+    class="flex items-center cursor-pointer transition text-white sm:hover:scale-110 sm:active:scale-100 max-sm:active:scale-110"
     :class="props.fill && 'p-[8px] bg-spm-blue rounded-full'"
     :style="{ width: `${props.size}px`, height: `${props.size}px` }"
   >
     <Component :is="icon[props.type]" class="h-auto w-full m-auto" />
-  </div>
+  </button>
 </template>
 
 <style scoped></style>

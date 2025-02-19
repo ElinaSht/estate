@@ -1,5 +1,11 @@
 <script setup lang="ts">
 import TheFooterLinks from '@/components/TheFooterLinks.vue'
+import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
+
+const breakpoints = useBreakpoints(breakpointsTailwind)
+const sm = breakpoints.smaller('sm')
+
+const iconSize = computed(() => (sm.value ? 40 : 45))
 </script>
 
 <template>
@@ -16,9 +22,9 @@ import TheFooterLinks from '@/components/TheFooterLinks.vue'
         <HyperLink thin text="hello@estate.ru" />
       </div>
 
-      <div class="flex gap-[4px] mt-[18px] max-sm:mt-[20px]">
-        <SocialButton fill type="telegram" :size="45" />
-        <SocialButton fill type="whatsapp" :size="45" />
+      <div class="flex gap-[12px] mt-[18px] max-sm:mt-[20px] max-sm:gap-[10px]">
+        <SocialButton fill type="telegram" :size="iconSize" />
+        <SocialButton fill type="whatsapp" :size="iconSize" />
       </div>
     </div>
 

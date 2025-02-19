@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import IconArrowRight from '../assets/icons/arrow-right.svg'
-import { breakpointsTailwind, useBreakpoints, useElementHover } from '@vueuse/core'
+import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
+import IntroButton from '@/components/IntroButton.vue'
 
 const breakpoints = useBreakpoints(breakpointsTailwind)
 const sm = breakpoints.smaller('sm')
@@ -14,13 +14,18 @@ const bgImage = computed(() =>
     : new URL('../assets/intro/intro-lg.webp', import.meta.url).href
 )
 
-const buttonRef = shallowRef<HTMLElement>()
-const isHovered = useElementHover(buttonRef)
+const imageLoaded = ref<boolean>(false)
 </script>
 
 <template>
-  <div class="relative rounded-[26px] overflow-hidden max-sm:h-[960px]">
-    <img :src="bgImage" alt="Estate" class="size-full object-cover object-center" />
+  <div class="relative rounded-[26px] overflow-hidden max-sm:h-[960px] bg-spm-gray">
+    <img
+      :src="bgImage"
+      alt="Estate"
+      class="size-full object-cover object-center transition duration-500"
+      :class="!imageLoaded && 'opacity-0'"
+      @load="imageLoaded = true"
+    />
 
     <div class="absolute inset-0 py-[80px] px-[100px] max-xl:p-[40px] max-lg:p-[16px] max-sm:py-[40px]">
       <div class="flex flex-col size-full">
@@ -47,22 +52,7 @@ const isHovered = useElementHover(buttonRef)
         <div
           class="flex mt-auto gap-[51px] max-lg:gap-[20px] items-center max-sm:flex-1 max-sm:flex-col max-sm:mt-[24px]"
         >
-          <div
-            ref="buttonRef"
-            class="relative overflow-hidden isolate justify-center rounded-full transition bg-spm-blue active:bg-spm-blue-active-button max-sm:w-full max-sm:max-w-[345px] cursor-pointer"
-          >
-            <div
-              class="z-10 transition duration-500 animate-move-right-repeat absolute inset-0 bg-gradient-to-r from-transparent via-spm-blue-gradient-button/40 to-transparent"
-              :class="isHovered && 'opacity-0'"
-            />
-
-            <div
-              class="z-20 relative flex items-center gap-[20px] text-white py-[11px] max-lg:py-[6px] max-md:py-0 max-sm:py-[11px] px-[36px] max-lg:px-[30px] max-md:px-[20px] max-sm:px-[36px]"
-            >
-              <span class="max-lg:text-[14px] max-md:text-[12px] max-sm:text-[16px]">Связаться напрямую</span>
-              <IconArrowRight />
-            </div>
-          </div>
+          <IntroButton />
 
           <div class="flex flex-1 max-sm:flex-row-reverse max-sm:flex-none max-sm:w-full max-sm:mt-auto">
             <div class="flex gap-[14px] items-center max-820:ml-auto">

@@ -9,7 +9,7 @@ const props = defineProps<{
 
 <template>
   <div class="flex flex-col gap-[40px] max-sm:gap-[20px]">
-    <div class="font-merriweather text-[36px] max-sm:text-[21px]">{{ props.title }}</div>
+    <h2 class="font-merriweather text-[36px] max-sm:text-[21px]">{{ props.title }}</h2>
 
     <div class="flex justify-between gap-[10px] flex-wrap max-sm:gap-[20px]">
       <TeamCard v-for="member in props.members" :key="member.name" :member class="mx-auto" />

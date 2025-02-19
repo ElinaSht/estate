@@ -25,12 +25,7 @@ const sm = breakpoints.smaller('sm')
         />
       </div>
 
-      <Transition
-        enter-from-class="!opacity-0 !h-0"
-        leave-to-class="!opacity-0 !h-0"
-        enter-active-class="!transition-[height] !duration-300 !ease-out"
-        leave-active-class="!transition-[height] !duration-100 !ease-in"
-      >
+      <Transition enter-from-class="!opacity-0" enter-active-class="!transition-[opacity] !duration-500 !ease-out">
         <div v-if="!sm || opened[section.title]" class="flex flex-col gap-[8px]">
           <HyperLink v-for="link of section.links" :key="link" thin :text="link" class="max-sm:text-[14px]" />
         </div>

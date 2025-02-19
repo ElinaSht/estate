@@ -16,7 +16,7 @@ const opened = computed(() => props.sublinks && hovered.value)
   <div class="relative isolate" @mouseenter="hovered = true" @mouseleave="hovered = false">
     <a
       href="#"
-      class="w-full relative flex gap-[6px] items-center cursor-pointer hover:text-spm-blue-light transition"
+      class="w-full relative flex gap-[6px] items-center cursor-pointer sm:hover:text-spm-blue-light sm:active:text-spm-blue max-sm:active:text-spm-blue-light transition"
       :class="!props.thin && 'py-[8px]'"
     >
       <span class="flex-1" :class="props.static && 'font-merriweather text-[30px]'">
