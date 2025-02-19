@@ -4,23 +4,37 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'white': '#FFFFFF',
-        'black-gray-text': '#262626',
-        'gray-dark-3': '#6C6C6C',
-        'gray-dark-4': '#5B5B5B',
-        'gray-light-4': '#D9D9D9',
-        'gray-dark-1': '#ABABAB',
-        'green-links': '#428D26',
-        'gray-light-2': '#F3F3F3',
-        'black-gray': '#101010',
-        'green-logo': '#63D23A',
-        'telegram': '#039BE5',
-        'youtube': '#FF0002',
-        'vk': '#4A76A8'
+        white: '#FFFFFF',
+        black: '#111111',
+        'spm-blue': '#0048CE',
+        'spm-blue-light': '#548FFF',
+        'spm-blue-mid': '#D9E4F8',
+        'spm-blue-dark': '#7D8CB4',
+        'spm-blue-footer': '#F1F4FD',
+        'spm-cornflower': '#799EE5',
+        'spm-blue-active-button': '#003AA6',
+        'spm-blue-gradient-button': '#D4DFF8',
       },
       fontFamily: {
-        'roboto': ['Roboto', 'sans-serif']
+        'golos-text': ['Golos Text', 'serif'],
+        merriweather: ['Merriweather', 'serif'],
+      },
+      boxShadow: {
+        'spm-shadow': '0 14px 44px rgba(125, 140, 180, 7%)',
+      },
+      screens: {
+        820: '820px',
+      },
+      keyframes: {
+        'move-right': {
+          '0%': { transform: 'translateX(-100%)' },
+          '60%': { transform: 'translateX(70%)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
+      },
+      animation: {
+        'move-right-repeat': 'move-right 5s linear infinite',
       },
     },
-  }
+  },
 }

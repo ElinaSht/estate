@@ -1,29 +1,30 @@
 <script setup lang="ts">
 import TheFooter from '@/components/TheFooter.vue'
+import TheHeader from '@/components/TheHeader.vue'
+import { teamInvestDepartment, teamMarketingDepartment } from '@/consts/team.ts'
 
-const route = useRoute()
-
-useHead({
-  title: () => route.meta.title || 'ElcorePLC',
-})
-
-const root = shallowRef<HTMLElement>()
-watch(route, () => root.value?.scrollTo(0,0))
+const opened = ref(false)
 </script>
+
 <template>
-  <div ref="root" class="overflow-auto size-full">
-    <div class="flex flex-col min-h-full">
-      <TheHeader />
+  <div class="flex flex-col size-full" :class="opened ? 'overflow-hidden' : 'overflow-auto'">
+    <div class="sticky z-10 top-0 bg-white/70 backdrop-blur-lg">
+      <TheHeader v-model:opened="opened" class="shrink-0 max-w-[1328px] px-[24px] mx-auto" />
+    </div>
 
-      <BreadCrumbs class="mt-[52px] md:max-lg:mt-[42px] sm:max-md:mt-[32px] max-sm:mt-[22px]" />
+    <div>
+      <div class="flex flex-col max-w-[1328px] px-[24px] mx-auto max-sm:px-0">
+        <TheIntroFrame />
 
-      <div class="flex-1 size-fit min-w-full">
-        <RouterView class="max-w-[1304px] mx-auto px-4"/>
+        <div class="flex flex-col gap-[60px] mt-[92px] mb-[80px] max-md:my-[40px] max-md:gap-[40px] max-sm:px-[24px]">
+          <DepartmentTeam :members="teamInvestDepartment" title="Инвестиционный отдел" />
+          <DepartmentTeam :members="teamMarketingDepartment" title="Маркетинг" />
+        </div>
       </div>
-<!--      <RouterView class="flex-1 size-full"/>-->
-<!--      <RouterView class="flex-1 size-fit min-w-full"/>-->
+    </div>
 
-      <TheFooter />
+    <div class="flex bg-spm-blue-footer">
+      <TheFooter class="max-w-[1328px] px-[24px] w-full mx-auto" />
     </div>
-    </div>
+  </div>
 </template>

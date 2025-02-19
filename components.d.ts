@@ -7,23 +7,17 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    BreadCrumbs: typeof import('./src/components/BreadCrumbs.vue')['default']
-    HeaderLinkPopover: typeof import('./src/components/HeaderLinkPopover.vue')['default']
-    IconLink: typeof import('./src/components/IconLink.vue')['default']
-    Link: typeof import('./src/components/Link.vue')['default']
-    LinkString: typeof import('@/components/StringLink.vue')['default']
-    PageNumber: typeof import('./src/components/PageNumber.vue')['default']
-    PostCard: typeof import('./src/components/PostCard.vue')['default']
-    PostTag: typeof import('./src/components/PostTag.vue')['default']
+    DepartmentTeam: typeof import('./src/components/DepartmentTeam.vue')['default']
+    HyperLink: typeof import('./src/components/HyperLink.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    SideModal: typeof import('./src/components/SideModal.vue')['default']
-    SocialNetwork: typeof import('./src/components/SocialNetwork.vue')['default']
-    StringLink: typeof import('./src/components/StringLink.vue')['default']
+    SocialButton: typeof import('./src/components/SocialButton.vue')['default']
+    TeamCard: typeof import('./src/components/TeamCard.vue')['default']
     TheFooter: typeof import('./src/components/TheFooter.vue')['default']
+    TheFooterLinks: typeof import('./src/components/TheFooterLinks.vue')['default']
     TheHeader: typeof import('./src/components/TheHeader.vue')['default']
-    TheLink: typeof import('./src/components/TheLink.vue')['default']
-    ThePagination: typeof import('./src/components/ThePagination.vue')['default']
-    TheSidebar: typeof import('./src/components/TheSidebar.vue')['default']
+    TheIntroFrame: typeof import('./src/components/TheIntroFrame.vue')['default']
+    TheMenu: typeof import('./src/components/TheMenu.vue')['default']
+    TheSideMenu: typeof import('./src/components/TheSideMenu.vue')['default']
   }
 }

@@ -1,15 +1,5 @@
 @layer utilities {
     .link {
-        @apply cursor-pointer sm:hover:text-green-logo sm:active:text-green-logo/60 max-sm:active:text-green-logo/60 transition;
-    }
-
-    .icon {
-        @apply cursor-pointer sm:hover:text-green-logo sm:active:text-green-logo/60 max-sm:active:text-green-logo/60 active:scale-95 transition;
-    }
-
-    .page-header {
-        @apply mb-[52px] mt-[32px] pt-[20px] text-[36px] leading-snug font-bold text-black-gray-text text-center
-               md:max-lg:mb-[42px] md:max-lg:mt-[22px] max-md:mb-[32px] max-md:mt-[12px] max-md:text-[30px] max-sm:mb-[22px] max-sm:mt-[2px];
     }
 }
 
