@@ -1,20 +1,28 @@
 <script setup lang="ts">
 import IconArrowRight from '@/assets/icons/arrow-right.svg'
-import { useElementHover } from '@vueuse/core'
+import { useElementActive } from '@/hooks/element-active.ts'
+
+const props = defineProps<{
+  disabled?: boolean
+}>()
 
 const buttonRef = shallowRef<HTMLElement>()
-const isHovered = useElementHover(buttonRef)
+
+const { activeState } = useElementActive(buttonRef)
+const gradientHidden = computed(() => props.disabled || activeState.value)
 </script>
 
 <template>
   <button
     ref="buttonRef"
-    class="relative overflow-hidden isolate justify-center rounded-full transition bg-spm-blue active:bg-spm-blue-active-button max-sm:w-full max-sm:max-w-[345px] cursor-pointer"
+    :disabled="props.disabled"
+    :class="disabled ? 'bg-spm-disabled-button/20' : 'bg-spm-blue active:bg-spm-blue-active-button cursor-pointer'"
+    class="relative overflow-hidden isolate justify-center rounded-full transition max-sm:w-full max-sm:max-w-[345px]"
     @touchstart.passive="() => {}"
   >
     <span
-      class="z-10 transition duration-500 animate-move-right-repeat absolute inset-0 bg-gradient-to-r from-transparent via-spm-blue-gradient-button/40 to-transparent"
-      :class="isHovered && 'opacity-0'"
+      class="z-10 transition animate-move-right-repeat absolute inset-0 bg-gradient-to-r from-transparent via-spm-blue-gradient-button/40 to-transparent"
+      :class="gradientHidden && 'opacity-0'"
     />
 
     <span

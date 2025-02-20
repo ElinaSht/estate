@@ -1,16 +1,23 @@
 <script setup lang="ts">
 import type { TeamMember } from '@/types/team-member.ts'
+import { useElementActive } from '@/hooks/element-active.ts'
 
 const props = defineProps<{
   member: TeamMember
 }>()
 
 const imageLoaded = ref<boolean>(false)
+
+const cardRef = shallowRef<HTMLElement>()
+
+const { activeState } = useElementActive(cardRef)
 </script>
 
 <template>
   <div
+    ref="cardRef"
     class="relative isolate flex flex-col rounded-[16px] overflow-hidden shadow-spm-shadow min-w-[290px] max-sm:min-w-[327px]"
+    @touchstart.passive="() => {}"
   >
     <div class="absolute z-10 flex gap-[10px] top-[10px] left-[10px]">
       <SocialButton v-for="item of props.member.social" :key="item" :size="22" :type="item" :fill="false" />
@@ -20,9 +27,8 @@ const imageLoaded = ref<boolean>(false)
       <img
         :src="props.member.image"
         :alt="props.member.name"
-        class="size-full object-cover object-center will-change-transform sm:hover:scale-110 max-sm:active:scale-110 transition duration-500"
-        :class="!imageLoaded && 'opacity-0 '"
-        @touchstart.passive="() => {}"
+        class="size-full pointer-events-none object-cover object-center will-change-transform transition duration-500"
+        :class="[!imageLoaded && 'opacity-0', activeState && 'scale-110']"
         @load="imageLoaded = true"
       />
     </div>

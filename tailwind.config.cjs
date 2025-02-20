@@ -14,6 +14,7 @@ module.exports = {
         'spm-cornflower': '#799EE5',
         'spm-blue-active-button': '#003AA6',
         'spm-blue-gradient-button': '#D4DFF8',
+        'spm-disabled-button': '#0048CE',
         'spm-gray': '#6D6C74',
       },
       fontFamily: {
